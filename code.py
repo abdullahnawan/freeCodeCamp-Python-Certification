@@ -18,9 +18,14 @@ def update_setting(settings_dict, key_value_tuple):
     
     return f'Setting {key} does not exist! Cannot update a non-existing setting.'#return statement if the key does not exist in the dictionary
 
-
-def delete_setting():
-    pass
+def delete_setting(settings_dict, key):
+    key = key.lower()
+    
+    if key in settings_dict:
+        del settings_dict[key]
+        return f'Setting {key} deleted successfully!' #checks to see if the key exists in the dictionary and if it does it delets it 
+    
+    return 'Setting not found' #return statment if not found
 
 def view_settings():
     pass
