@@ -27,8 +27,16 @@ def delete_setting(settings_dict, key):
     
     return 'Setting not found' #return statment if not found
 
-def view_settings():
-    pass
+def view_settings(settings_dict):
+    if not settings_dict:
+        return "No settings available." #checks to see if the setting doesnt exist
+
+    result = "Current User Settings:\n"
+
+    for key, value in settings_dict.items():
+        result += f"{key.capitalize()}: {value}\n" #adds key and val to result variable
+
+    return result #returns the result variable
 
 test_settings = {
     'Theme': 'dark',
